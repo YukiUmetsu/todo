@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- app.coffee の戦闘のangular.moduleで宣言した名前にする -->
+<html ng-app="todo">
+<head>
+  <base href="/">
+  <title>Todo</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
