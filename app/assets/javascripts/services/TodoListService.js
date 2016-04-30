@@ -47,6 +47,16 @@ angular.module('todo').factory('TodoList', function($resource, $http) {
       }), this.errorHandler);
     };
 
+    TodoList.prototype.update = function(list, attrs) {
+      return new this.service({
+        todo_list: attrs
+      }).$update({
+        id: list.id
+      }, (function() {
+        return null;
+      }), this.errorHandler);
+    };
+
     return TodoList;
 
   })();

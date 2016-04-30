@@ -21,3 +21,8 @@ angular.module('todo').factory 'TodoList', ($resource, $http) ->
 
     delete: (list) ->
       new @service().$delete { id: list.id }, (-> null), @errorHandler
+
+    update: (list, attrs) ->
+      new @service(todo_list: attrs).$update {id: list.id}, (-> null), @errorHandler
+      # attrs = { name: listName } なので、todo_list: attrs は { todo_list: { name: listName } } となる
+      # Controller側で params = { todo_list: { name: listName } } となる

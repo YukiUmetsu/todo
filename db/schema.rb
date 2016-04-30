@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427140531) do
+ActiveRecord::Schema.define(version: 20160430041053) do
 
   create_table "todo_lists", force: :cascade do |t|
     t.string   "name",       null: false
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160427140531) do
     t.boolean  "completed",    default: false, null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.integer  "position"
   end
 
 end
